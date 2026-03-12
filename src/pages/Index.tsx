@@ -11,7 +11,7 @@ const WHEEL_PRIZES = [
   { label: "Билет", emoji: "🎫", color: "#FFD700", bg: "#1a1500" },
   { label: "+1 ГБ", emoji: "📡", color: "#FFD700", bg: "#1a1c00" },
   { label: "100 ₽", emoji: "💎", color: "#FFD700", bg: "#1e1700" },
-  { label: "+3 ГБ", emoji: "⚡", color: "#FFD700", bg: "#1c1a00" },
+  { label: "50 мин", emoji: "⚡", color: "#FFD700", bg: "#1c1a00" },
   { label: "Джекпот", emoji: "🏆", color: "#FFD700", bg: "#201e00" },
 ];
 
@@ -178,49 +178,38 @@ function WheelOfFortune({
         <span className="text-[#FFD700]/60 text-xs">−1 ГБ за кручение</span>
       </div>
 
-      <div className="flex gap-4 items-center">
+      <div className="flex flex-col items-center">
         {/* Колесо */}
-        <div className="relative flex-shrink-0">
+        <div className="relative">
           <div
             className="absolute -top-2 left-1/2 -translate-x-1/2 z-10"
             style={{ filter: "drop-shadow(0 0 4px #FFD700)" }}
           >
-            <div className="w-0 h-0 border-l-[8px] border-r-[8px] border-t-[18px] border-l-transparent border-r-transparent border-t-[#FFD700]" />
+            <div className="w-0 h-0 border-l-[10px] border-r-[10px] border-t-[22px] border-l-transparent border-r-transparent border-t-[#FFD700]" />
           </div>
           <canvas
             ref={canvasRef}
-            width={200}
-            height={200}
+            width={280}
+            height={280}
             onClick={spin}
             className="cursor-pointer rounded-full"
             style={{ display: "block" }}
           />
         </div>
 
-        {/* Призы и кнопка */}
-        <div className="flex-1 flex flex-col gap-2">
-          {showResult && result ? (
-            <div
-              className="rounded-2xl p-3 text-center border mb-1"
-              style={{ borderColor: "#FFD700", background: "#20200a" }}
-            >
-              <div className="text-3xl mb-1">{result.emoji}</div>
-              <div className="text-[#FFD700] font-bold text-sm">Выигрыш!</div>
-              <div className="text-white font-bold">{result.label}</div>
-            </div>
-          ) : null}
-          <button
-            onClick={spin}
-            disabled={spinning || gbBalance < 1}
-            className="w-full rounded-2xl py-3 font-bold text-sm disabled:opacity-40"
-            style={{ background: "#FFD700", color: "#0d0d1a" }}
+        {showResult && result && (
+          <div
+            className="mt-3 w-full rounded-2xl p-3 text-center border"
+            style={{ borderColor: "#FFD700", background: "#20200a" }}
           >
-            {spinning ? "Крутим..." : "🎰 Крутить!"}
-          </button>
-          {gbBalance < 1 && (
-            <p className="text-white/40 text-xs text-center">Нет гигабайт</p>
-          )}
-        </div>
+            <div className="text-3xl mb-1">{result.emoji}</div>
+            <div className="text-[#FFD700] font-bold text-sm">Выигрыш!</div>
+            <div className="text-white font-bold">{result.label}</div>
+          </div>
+        )}
+        {gbBalance < 1 && (
+          <p className="text-white/40 text-xs text-center mt-2">Нет гигабайт для кручения</p>
+        )}
       </div>
     </div>
   );
