@@ -208,20 +208,7 @@ function WheelOfFortune({
               <div className="text-[#FFD700] font-bold text-sm">Выигрыш!</div>
               <div className="text-white font-bold">{result.label}</div>
             </div>
-          ) : (
-            <div className="grid grid-cols-2 gap-1.5 mb-1">
-              {WHEEL_PRIZES.slice(0, 6).map((p) => (
-                <div
-                  key={p.label}
-                  className="rounded-xl px-2 py-1.5 text-center"
-                  style={{ background: "#252535" }}
-                >
-                  <span className="text-xs">{p.emoji} </span>
-                  <span className="text-[#FFD700] text-xs font-bold">{p.label}</span>
-                </div>
-              ))}
-            </div>
-          )}
+          ) : null}
           <button
             onClick={spin}
             disabled={spinning || gbBalance < 1}
