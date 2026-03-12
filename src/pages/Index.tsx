@@ -372,10 +372,13 @@ export default function Index() {
         </div>
       </div>
 
-      {/* Точки-гигабайты */}
-      <GbDots available={gbBalance} total={GB_TOTAL} />
+      <div className="text-center text-white/50 text-sm mb-2">из {GB_TOTAL}</div>
 
-      <div className="text-center text-white/50 text-sm mb-5">из {GB_TOTAL}</div>
+      {/* Описание акции */}
+      <div className="mx-4 mb-5 rounded-2xl px-5 py-4" style={{ background: "#1a1a28", border: "1px solid #FFD70030" }}>
+        <div className="text-[#FFD700] font-black text-lg mb-1">Гигаудача!</div>
+        <div className="text-white/60 text-sm leading-relaxed">Остатки ГБ превращаются в лотерейные билеты. Чем больше не потратил — тем больше шансов выиграть.</div>
+      </div>
 
       {/* Подключённые приложения */}
       <div className="px-5 mb-6">
