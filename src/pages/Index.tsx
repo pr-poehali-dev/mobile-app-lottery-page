@@ -249,7 +249,7 @@ function LotteryBanner({ gbBalance }: { gbBalance: number }) {
         <div>
           <div className="flex items-center gap-2 mb-1">
             <span className="text-2xl">🏠</span>
-            <span className="text-white font-bold text-base">Розыгрыш квартиры</span>
+            <span className="text-white font-bold text-base">Суперрррозыгрыш !</span>
           </div>
           <div
             className="text-xs px-2 py-0.5 rounded-full inline-block"
