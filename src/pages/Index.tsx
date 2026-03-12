@@ -386,7 +386,7 @@ export default function Index() {
             {freeApps.map((app, i) => (
               <div
                 key={i}
-                className="w-10 h-10 rounded-full flex items-center justify-center border-2 border-[#12121e] text-lg"
+                className="w-7 h-7 rounded-full flex items-center justify-center border-2 border-[#12121e] text-sm"
                 style={{ background: app.bg, zIndex: 10 - i }}
               >
                 <span style={{ filter: "saturate(0) brightness(10)" }}>{app.emoji}</span>
@@ -398,7 +398,7 @@ export default function Index() {
             {freeApps2.map((app, i) => (
               <div
                 key={i}
-                className="w-10 h-10 rounded-full flex items-center justify-center border-2 border-[#12121e] text-sm font-black"
+                className="w-7 h-7 rounded-full flex items-center justify-center border-2 border-[#12121e] text-xs font-black"
                 style={{ background: app.bg, zIndex: 10 - i, color: "white" }}
               >
                 {app.label}
@@ -410,7 +410,7 @@ export default function Index() {
             {freeApps3.map((app, i) => (
               <div
                 key={i}
-                className="w-10 h-10 rounded-full flex items-center justify-center border-2 border-[#12121e] text-lg"
+                className="w-7 h-7 rounded-full flex items-center justify-center border-2 border-[#12121e] text-sm"
                 style={{ background: app.bg, zIndex: 10 - i }}
               >
                 {app.emoji}
@@ -419,7 +419,7 @@ export default function Index() {
           </div>
           {/* + */}
           <div
-            className="w-10 h-10 rounded-full flex items-center justify-center border-2 border-[#12121e] font-bold text-white text-lg"
+            className="w-7 h-7 rounded-full flex items-center justify-center border-2 border-[#12121e] font-bold text-white text-sm"
             style={{ background: "#2a2a3a" }}
           >
             +
