@@ -144,8 +144,11 @@ function WheelOfFortune({
     const winIndex = Math.floor(Math.random() * WHEEL_PRIZES.length);
     const extraSpins = 5 + Math.random() * 5;
     const startRot = rotRef.current;
-    const targetAngle =
-      startRot + extraSpins * 360 + (360 - winIndex * segmentAngle - segmentAngle / 2);
+    // Нормализуем текущую позицию, чтобы точно попасть в нужный сектор
+    const currentNorm = ((startRot % 360) + 360) % 360;
+    const targetNorm = (360 - winIndex * segmentAngle - segmentAngle / 2 + 360) % 360;
+    const delta = ((targetNorm - currentNorm) + 360) % 360;
+    const targetAngle = startRot + Math.ceil(extraSpins) * 360 + delta;
     const duration = 4000;
     const startTime = Date.now();
 
