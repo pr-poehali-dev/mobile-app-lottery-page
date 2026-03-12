@@ -50,12 +50,7 @@
 
   body {
     @apply bg-background text-foreground font-rubik;
-    background: radial-gradient(
-      ellipse at top left,
-      #1a0a2e 0%,
-      #0d0d1a 50%,
-      #0a1628 100%
-    );
+    background: #12121e;
     min-height: 100vh;
   }
 }
